@@ -30,7 +30,7 @@ end
   p = initial_point(data)
   first_atom, next_atom = initiate_list(data, p)
   gen_lists!(data, p, first_atom, next_atom)
-  @test lj_pot(p,  data, first_atom, next_atom) ≈  -247958.67014661833
-
+  @test lj_pot(p,  data, first_atom, next_atom) ≈ -7631.548550178224
+  
 end
 
