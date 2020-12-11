@@ -17,6 +17,8 @@ module Simulacoes
     export gen_lists!
     include("./lj_pot.jl")
     export lj_pot
+    include("./lj_pot_parallel.jl")
+    export lj_pot_parallel
     include("./initiate_list.jl")
     export initiate_list
 
