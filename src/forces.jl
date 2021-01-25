@@ -39,7 +39,7 @@ function lj_force!(p,  data, first_atom, next_atom, forces_list)
             end
         end
     end
-    return forces_list, u   
+    return u   
 end
 
 
