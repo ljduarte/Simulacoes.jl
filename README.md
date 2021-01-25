@@ -3,5 +3,5 @@
 Instale com:
 
 ```
-] add https://github.com/ljduarte/Simulacoes.lj
+] add https://github.com/ljduarte/Simulacoes.jl
 ```
