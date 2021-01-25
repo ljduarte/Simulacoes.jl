@@ -69,7 +69,7 @@ end
   r, delta_x, delta_y = minimg(p[1], p[2], data.side)
   @test upair(r, data) ≈ -0.2955814601750326
   @test isapprox(force_pair(delta_x, delta_y, r, data), (0.026979429768742007, 1.7345026569041166))
-  forces_list, u = lj_force!(p,  data, first_atom, next_atom, forces_list)
+  u = lj_force!(p,  data, first_atom, next_atom, forces_list)
   @test isapprox(forces_list[1], [2.9749744219446326, 1.730790463586403])
   @test isapprox(forces_list[10000], [-3.1208157043186255, -2.051342533620307])
   @test u ≈ -7472.164849146468
