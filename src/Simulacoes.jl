@@ -1,5 +1,5 @@
 module Simulacoes
-
+#Exercícios 39 a 43 estão inclusos no package#
     #data structure
     include("./Data.jl")
     export Data
@@ -21,5 +21,9 @@ module Simulacoes
     export lj_pot_parallel
     include("./initiate_list.jl")
     export initiate_list
-
+    include("./forces.jl")
+    export force_pair
+    export lj_force!
+    include("./velocidades.jl")
+    export initial_velocity
 end

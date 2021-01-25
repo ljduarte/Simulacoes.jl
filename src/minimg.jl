@@ -1,21 +1,18 @@
 function minimg(p1 , p2 , side)
-    distx = abs(p1[1]-p2[1])
-    disty = abs(p1[2]-p2[2])
-    rx = distx%side #resto em x
-    ry = disty%side #resto em y
-    
-    if rx%side <= side/2
-        minimgx = rx%side
-    else
-        minimgx = side  - rx%side
+
+    delta_x = (p1[1] - p2[1]) % side
+    if delta_x > side/2
+        delta_x -= side
+    elseif delta_x < -side/2
+        delta_x += side
     end
-    
-    if ry%side <= side/2
-        minimgy = ry%side
-    else
-        minimgy = side  - ry%side
+
+    delta_y = (p1[2] - p2[2]) % side
+    if delta_y > side/2
+        delta_y -= side
+    elseif delta_y < -side/2
+        delta_y += side 
     end
-    
-    minimg = sqrt(minimgx^2+minimgy^2)
-    return minimg
+    minimg = sqrt(delta_x^2+delta_y^2)
+    return (minimg, delta_x, delta_y)
 end

@@ -1,7 +1,7 @@
 name = "Simulacoes"
 uuid = "4efb01ef-14a3-4e22-a218-cb2c27a6f75a"
 authors = ["Leonardo J. Duarte <leo.j.duarte@hotmail.com.br> and contributors"]
-version = "0.1.0"
+version = "0.1.5"
 
 [deps]
 Parameters = "d96e819e-fc66-5662-9728-84c9c7592b0a"

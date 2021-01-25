@@ -10,20 +10,14 @@ function lj_pot_parallel(p,  data, first_atom, next_atom)
           for l in jcell-1:jcell+1
                 i, j = wrap_cell([data.nc, data.nc], k, l)
                 jp = first_atom[i, j]
-                if jp > ip
-                    r = minimg(p[ip], p[jp], data.side)
-                    r6=(r^2)^3
-                    r12=r6^2
-                    u[id] = u[id] + data.eps4*(data.sig12/r12 - data.sig6/r6)          
-                    while next_atom[jp] > 0
-                        if next_atom[jp] > ip
-                            r = minimg(p[ip], p[next_atom[jp]], data.side)
-                            r6=(r^2)^3
-                            r12=r6^2
-                            u[id] =  u[id] + data.eps4*(data.sig12/r12 - data.sig6/r6)
+                while jp > 0
+                    if ip < jp
+                        r = minimg(p[ip], p[jp], data.side)[1]
+                        if r < data.cutoff
+                            u[id] = u[id] + upair(r, data)
                         end
-                        jp = next_atom[jp] 
-                    end
+                    end           
+                    jp = next_atom[jp] 
                 end
             end
         end

@@ -14,7 +14,11 @@ using Parameters
 
   N :: Int64 = 10_000
 
-  # Data for computation
+  T :: Float64 = 298.15
+  R :: Float64 = 8.3145 
+  m :: Float64 = 1.0
+  
+  # Daata for computation
   eps4 :: Float64 = 4*eps
   sig6 :: Float64 = sig^6
   sig12 :: Float64 = sig^12
